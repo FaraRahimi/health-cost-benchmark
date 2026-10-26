@@ -40,7 +40,10 @@ def fetch_cbs(force=False):
 
     # CBS ODataFeed pages at 10,000 rows and gives the next page in odata.nextLink.
     while url:
-        response = requests.get(url, params=params, headers=HEADERS, timeout=60)
+        try:
+            response = requests.get(url, params=params, headers=HEADERS, timeout=60)
+        except requests.exceptions.ConnectionError:
+            raise SystemExit("Cannot reach CBS. Check your internet connection.")
         if response.status_code != 200:
             raise SystemExit(f"CBS request failed: status {response.status_code}")
         data = response.json()
@@ -70,7 +73,10 @@ def fetch_cbs_regions(force=False):
 
     # CBS ODataFeed pages at 10,000 rows and gives the next page in odata.nextLink.
     while url:
-        response = requests.get(url, params=params, headers=HEADERS, timeout=60)
+        try:
+            response = requests.get(url, params=params, headers=HEADERS, timeout=60)
+        except requests.exceptions.ConnectionError:
+            raise SystemExit("Cannot reach CBS. Check your internet connection.")
         if response.status_code != 200:
             raise SystemExit(f"CBS request failed: status {response.status_code}")
         data = response.json()
