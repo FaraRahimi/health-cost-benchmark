@@ -84,6 +84,8 @@ def fetch_cbs_regions(force=False):
     return file_path
 
 
-check_vektis()
-fetch_cbs()
-fetch_cbs_regions()
+if __name__ == "__main__":
+    check_vektis()
+    fetch_cbs()
+    fetch_cbs_regions()
+    

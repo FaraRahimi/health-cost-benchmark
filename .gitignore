@@ -3,3 +3,4 @@ data/raw/
 .ipynb_checkpoints/
 .DS_Store
 .vscode/
+__pycache__/
