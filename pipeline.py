@@ -4,6 +4,7 @@ from pathlib import Path
 import time
 
 import requests
+import pandas as pd
 
 VEKTIS_URL = "https://www.vektis.nl/vektisnl-assets/prd/storage/uploads/Docs%20per%20pagina/Open%20Data%20Bestanden/2024/Vektis%20Open%20Databestand%20Zorgverzekeringswet%202024%20-%20gemeente.csv"
 CBS_URL = "https://opendata.cbs.nl/ODataFeed/odata/86137NED"
@@ -26,9 +27,13 @@ def check_vektis():
         raise SystemExit(f"The file is missing, Vektis blocks automated downloads\n download it by hand from {VEKTIS_URL}\n save it as {file_path}")
 
 
-
-def fetch_cbs():
+def fetch_cbs(force=False):
     """Fetch the CBS 2024 health table for municipalities."""
+    RAW_DIR.mkdir(parents=True, exist_ok=True)
+    file_path = RAW_DIR / "cbs_86137NED_gemeenten.csv"
+    if file_path.exists() and not force:
+        print(f"Skipped: {file_path} already exists")
+        return file_path
     url = CBS_URL + "/TypedDataSet"
     params = {"$filter": "startswith(RegioS, 'GM')", "$format": "json"}
     all_rows = []
@@ -43,10 +48,11 @@ def fetch_cbs():
         url = data.get("odata.nextLink")
         params = None
         time.sleep(1)
-
-    print(f"CBS rows: {len(all_rows)}")
-    return all_rows
-
+    
+    df = pd.DataFrame(all_rows)
+    df.to_csv(file_path, index=False)
+    print(f"Saved: {file_path} ({len(all_rows)} rows)")
+    return file_path
 
 
 check_vektis()
