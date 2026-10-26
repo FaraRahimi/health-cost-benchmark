@@ -54,8 +54,6 @@ per person. If it actually costs €3,600 per person, the cost index is
 **Self-rated health** (% of adults who rate their health as good or very good; higher = healthier). I chose it because it covers all kinds of health, so it matches total cost, the headline KPI. 
 Anxiety or depression was set aside: it explains only the mental health slice, and specialist mental health costs are only about 90% complete in the Vektis data.
 
-## Health measure
-
 ## Method (provisional)
 
 ## Cleaning decisions
