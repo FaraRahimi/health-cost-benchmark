@@ -1,0 +1,27 @@
+column,group
+kosten_medisch_specialistische_z,Hospital care
+kosten_farmacie,Pharmacy
+kosten_huisarts_inschrijftarief,GP care
+kosten_huisarts_consult,GP care
+kosten_huisarts_mdz,GP care
+kosten_huisarts_overig,GP care
+kosten_eerstelijns_ondersteuning,GP care
+kosten_consulten_ggz,Mental health
+kosten_intramuraal_verblijf_ggz,Mental health
+kosten_overige_prestaties_ggz,Mental health
+kosten_innovatiegelden_ggz,Mental health
+kosten_verpleging_en_verzorging,Nursing and rehabilitation
+kosten_eerstelijnsverblijf,Nursing and rehabilitation
+kosten_geriatrische_revalidatiez,Nursing and rehabilitation
+kosten_gzsp,Nursing and rehabilitation
+kosten_paramedische_zorg_fysioth,Paramedical
+kosten_paramedische_zorg_overig,Paramedical
+kosten_hulpmiddelen,Aids and dental
+kosten_mondzorg,Aids and dental
+kosten_kraamzorg,Maternity
+kosten_verloskundige_zorg,Maternity
+kosten_integrale_geboortezorg,Maternity
+kosten_grensoverschrijdende_zorg,Care abroad
+kosten_ziekenvervoer_zittend,Transport and other
+kosten_ziekenvervoer_liggend,Transport and other
+kosten_overig,Transport and other
