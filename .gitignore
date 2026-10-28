@@ -4,3 +4,5 @@ data/raw/
 .DS_Store
 .vscode/
 __pycache__/
+data/processed/vektis_clean.csv
+data/processed/cbs_health_clean.csv
