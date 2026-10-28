@@ -57,7 +57,7 @@ Anxiety or depression was set aside: it explains only the mental health slice, a
 ## Method (provisional)
 
 ## Cleaning decisions
-_To be filled in during cleaning._
+- **Boundaries:** Vektis and CBS cover exactly the same 342 municipalities (2024 layout). `notebooks/02_clean.ipynb` Step 7 checks this with an `assert`.
 
 ## Findings
 _To be filled in after analysis._
