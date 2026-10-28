@@ -57,7 +57,23 @@ Anxiety or depression was set aside: it explains only the mental health slice, a
 ## Method (provisional)
 
 ## Cleaning decisions
-- **Boundaries:** Vektis and CBS cover exactly the same 342 municipalities (2024 layout). `notebooks/02_clean.ipynb` Step 7 checks this with an `assert`.
+Every decision is written out in full (found, did, why, rejected) in `notebooks/02_clean.ipynb`. `pipeline.py` runs the decided steps; one command, `python pipeline.py`, rebuilds the clean tables from the raw data.
+
+- **Privacy bucket removed.** One unlabelled row holds groups under 10 people and people with unknown sex, age or municipality: 2.2% of people but 0.3% of cost. It cannot be placed in any municipality.
+- **Negative cells kept.** 2 of about 338,000 cells (Uitgeest, Twenterand), each under 0.01% of that town's cost. They are real corrections, and keeping them keeps totals equal to the official Vektis figures.
+- **Care abroad kept.** 0.6% of all cost, but 18% in Sluis and 5 to 10% in other border towns. Excluding it would make those towns look cheaper than they are.
+- **Age band as a number.** `age_from` (0, 5 ... 90), so age bands sort correctly.
+- **10 care-type groups.** The 26 Vektis cost columns are mapped to 10 groups in `data/manual/care_type_groups.csv`. An assert checks the groups add up to the total in every row.
+- **Name matching.** Vektis has only names, CBS has codes. A matching key (capitals, accents removed) matched 329 of 342; the other 13 are fixed by hand in `data/manual/name_fixes.csv`. Asserts check every row has a code.
+- **Boundaries.** Vektis and CBS cover exactly the same 342 municipalities (2024 layout), checked by an assert.
+- **CBS reshaped.** Adults (18+) and self-rated health only, one row per municipality, with the value and its 95% interval (`health_value`, `health_low`, `health_high`).
+- **Missing health values kept empty.** Schiermonnikoog and Vlieland have no health figure. They stay in the cost benchmark and are left out only of the cost-versus-health comparison.
+
+## Limitations
+- CBS health figures cover adults (18+) only, while Vektis cost covers all ages.
+- Care abroad is incomplete in the Vektis data (foreign bills arrive late), so border towns' true cost is probably higher than shown.
+- Health figures are survey estimates. Small municipalities have wide 95% intervals, so an extreme value there may be noise.
+
 
 ## Findings
 _To be filled in after analysis._
