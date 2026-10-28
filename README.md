@@ -81,8 +81,6 @@ _To be filled in after analysis._
 ## Recommendations
 _To be filled in after analysis._
 
-## Limitations
-
 ## How to reproduce
 
 ## Project structure
