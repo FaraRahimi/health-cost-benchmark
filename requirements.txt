@@ -35,6 +35,7 @@ pyparsing==3.3.3
 python-dateutil==3.0.0
 pyzmq==27.2.0
 requests==2.34.2
+scipy==1.18.1
 six==1.17.0
 stack-data==0.6.3
 tornado==6.6
