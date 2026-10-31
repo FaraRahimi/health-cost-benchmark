@@ -1,0 +1,16 @@
+rank,Key,gemeentenaam,aantal_verzekerdejaren,health_value,cost_index,excess,confidence,top_driver_1,top_driver_2,suggested_focus
+1,GM0014,GRONINGEN,228483,77.8,105.0,34920133,clear,Mental health,Nursing and rehabilitation,"Review mental health contracts and volumes first (mental health alone +€39M), then nursing and rehabilitation."
+2,GM0344,UTRECHT,363687,78.5,102.3,23984741,clear,Mental health,Nursing and rehabilitation,"Review mental health contracts and volumes (+€34M), then nursing and rehabilitation."
+3,GM0118,HOOGEVEEN,55369,75.6,111.6,22383393,borderline,Hospital care,Nursing and rehabilitation,"Review hospital care use and referral patterns (hospital care index 113, +€14M), then nursing and rehabilitation."
+4,GM0080,LEEUWARDEN,125526,74.7,104.7,19334230,borderline,Mental health,Nursing and rehabilitation,Review mental health (+€13M) and nursing and rehabilitation (+€8M) contracts.
+5,GM0193,ZWOLLE,131362,77.8,104.0,16555841,clear,Mental health,Nursing and rehabilitation,"Review mental health contracts and volumes (index 134, +€14M)."
+6,GM0301,ZUTPHEN,48026,74.5,108.7,14955415,borderline,Mental health,Hospital care,Check whether a mental health institution in the town explains the high index (184) before reviewing contracts.
+7,GM0164,HENGELO,81851,75.5,105.1,14326919,borderline,Hospital care,Mental health,"Review hospital care use and referral patterns (+€6M); small index gap, so lower priority."
+8,GM0200,APELDOORN,164960,75.6,102.5,14149192,borderline,Hospital care,Mental health,"Review hospital care use and referral patterns (+€11M), then mental health (+€7M)."
+9,GM0613,ALBRANDSWAARD,26343,74.6,115.4,13355599,borderline,Mental health,Hospital care,Check whether a psychiatric institution in the town explains the mental health excess (index 290) before reviewing contracts.
+10,GM0150,DEVENTER,102023,74.2,103.8,12879551,borderline,Mental health,Maternity,"Review mental health contracts (index 136, +€12M); also look at maternity (index 161)."
+11,GM0664,GOES,39220,75.5,108.2,11564902,borderline,Mental health,Care abroad,"Review mental health use (index 177, +€9M)."
+12,GM1700,TWENTERAND,35048,74.6,108.8,10300511,borderline,Nursing and rehabilitation,Hospital care,"Review nursing and rehabilitation contracts (index 161, +€5M)."
+13,GM0109,COEVORDEN,35095,74.5,107.0,9169847,borderline,Hospital care,Nursing and rehabilitation,"Review hospital care use (+€7.5M), then nursing and rehabilitation (index 134)."
+14,GM0274,RENKUM,31077,77.4,106.0,7290141,clear,Mental health,GP care,Check whether a psychiatric institution in the town explains the mental health excess (index 251) before reviewing contracts.
+15,GM0160,HARDENBERG,62278,78.9,102.9,6085960,clear,Nursing and rehabilitation,Hospital care,"Review nursing and rehabilitation contracts (index 143, +€7M)."
