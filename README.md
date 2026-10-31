@@ -22,7 +22,8 @@ All costs are basic-insurance (Zvw) claims paid for 2024, per **insured-year**
 | **Expected cost per person** | national cost per insured-year for each age-sex group, applied to the town's own age-sex mix | What the town would cost if it were "average" for its population |
 | **Cost gap (€)** | (actual - expected) per person x town's insured-years | Total extra euros; 0 = as expected |
 | **Cost index** (headline) | actual / expected x 100 | 100 = as expected; 120 = 20% more than expected |
-| **Care-type contribution** | care type's cost gap / town's total cost gap x 100 | Which care types drive the extra cost; a slice can be negative if that care type is below expected |
+| **Care-type cost index** | care type's actual / expected x 100, per town | Which care types are far above expected; same scale as the cost index |
+| **Care-type excess (€)** | care type's actual - expected, per town | Where the extra euros sit; the top 2 per town are the "drivers" in the priority list |
 
 **Worked example:** a town has 10 young residents (national rate €1,000) and 10 older
 residents (national rate €5,000). Expected = (10 x 1,000 + 10 x 5,000) / 20 = **€3,000**
@@ -57,7 +58,8 @@ Anxiety or depression was set aside: it explains only the mental health slice, a
 ## Method (provisional)
 
 ## Cleaning decisions
-Every decision is written out in full (found, did, why, rejected) in `notebooks/02_clean.ipynb`. `pipeline.py` runs the decided steps; one command, `python pipeline.py`, rebuilds the clean tables from the raw data.
+Every decision is written out in full (found, did, why, rejected) in `notebooks/02_clean.ipynb`. `pipeline.py` runs the decided steps; one command, `python pipeline.py`, Every decision is written out in full (found, did, why, rejected) in `notebooks/02_clean.ipynb`. `pipeline.py` runs the decided steps; one command, `python pipeline.py`, rebuilds the clean tables, the analysis and the priority list from the raw data.
+
 
 - **Privacy bucket removed.** One unlabelled row holds groups under 10 people and people with unknown sex, age or municipality: 2.2% of people but 0.3% of cost. It cannot be placed in any municipality.
 - **Negative cells kept.** 2 of about 338,000 cells (Uitgeest, Twenterand), each under 0.01% of that town's cost. They are real corrections, and keeping them keeps totals equal to the official Vektis figures.
@@ -83,4 +85,47 @@ _To be filled in after analysis._
 
 ## How to reproduce
 
+Tested with Python 3.13 on macOS. You need internet access for the CBS download.
+
+1. **Clone the repo and set up a virtual environment.**
+   ```bash
+   git clone https://github.com/FaraRahimi/health-cost-benchmark.git
+   cd health-cost-benchmark
+   python3 -m venv .venv
+   source .venv/bin/activate
+   pip install -r requirements.txt
+   ```
+2. **Download the Vektis file by hand.** Vektis blocks scripted downloads, so this is
+   the one manual step. Download
+   [Vektis Open Databestand Zorgverzekeringswet 2024 - gemeente](https://www.vektis.nl/vektisnl-assets/prd/storage/uploads/Docs%20per%20pagina/Open%20Data%20Bestanden/2024/Vektis%20Open%20Databestand%20Zorgverzekeringswet%202024%20-%20gemeente.csv)
+   and save it, with its name unchanged, as
+   `data/raw/Vektis Open Databestand Zorgverzekeringswet 2024 - gemeente.csv`.
+   If the file is missing, `pipeline.py` stops and prints these same instructions.
+3. **Run the pipeline, then the charts.**
+   ```bash
+   python pipeline.py
+   python charts.py
+   ```
+   `pipeline.py` downloads the two CBS tables into `data/raw/` (skipped if they are
+   already there), cleans both sources, runs the benchmark and saves the priority list.
+   Every step checks itself with asserts, so a wrong number stops the run instead of
+   reaching the results.
+
+**What you get:** `outputs/priority_list.csv` (the 15 priority municipalities) and five
+charts in `figures/`. The notebooks in `notebooks/` show the same steps with every
+decision explained; they read the files the pipeline makes, so run the pipeline first.
+
 ## Project structure
+
+| Path | What it holds | Made by |
+|---|---|---|
+| `pipeline.py` | Download, clean and analyse; saves the priority list | hand |
+| `charts.py` | The five charts, one function each | hand |
+| `notebooks/01_explore.ipynb` | First look at the raw data | hand |
+| `notebooks/02_clean.ipynb` | Every cleaning decision: found, did, why | hand |
+| `notebooks/03_analyse.ipynb` | The benchmark step by step, with findings | hand |
+| `data/raw/` | Vektis and CBS source files (not in git) | you (Vektis) and the pipeline (CBS) |
+| `data/manual/` | Hand-made inputs: care-type groups, name fixes, suggested focus per town | hand |
+| `data/processed/` | Clean and analysis tables (not in git) | the pipeline |
+| `outputs/priority_list.csv` | The deliverable: 15 municipalities to review | the pipeline |
+| `figures/` | The five charts as PNG | `charts.py` |
