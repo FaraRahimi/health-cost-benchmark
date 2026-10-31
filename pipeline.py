@@ -312,6 +312,7 @@ def add_size_rule(town_kpis):
     assert small == 13, f"Expected 13 small towns, got {small}"
     return town_kpis
 
+
 def weighted_national_health(town_kpis):
     """Take the town table; return national self-rated health (%), weighted by insured-years like the cost index."""
     # Only towns with a health value (the 2 islands have none)
