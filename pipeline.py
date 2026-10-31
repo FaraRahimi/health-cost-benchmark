@@ -404,14 +404,14 @@ def save_priority_list(priority_list):
     print(f"Saved: {path} ({check.shape})")
 
 
-def save_tables(rates_flat, big_towns, care_type_town):
+def save_tables(rates_flat, town_kpis, care_type_town):
     """Save the three analysis tables that charts.py reads to data/processed/."""
     # Made by the code for the code (like the clean tables), so they go next to them
     PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
     rates_flat.to_csv(PROCESSED_DIR / "reference_rates.csv", index=False)
-    big_towns.to_csv(PROCESSED_DIR / "town_benchmark.csv", index=False)
+    town_kpis.to_csv(PROCESSED_DIR / "town_benchmark.csv", index=False)
     care_type_town.to_csv(PROCESSED_DIR / "care_type_benchmark.csv", index=False)
-    print(f"Saved: {PROCESSED_DIR} (reference_rates.csv {rates_flat.shape}, town_benchmark.csv {big_towns.shape}, care_type_benchmark.csv {care_type_town.shape})")
+    print(f"Saved: {PROCESSED_DIR} (reference_rates.csv {rates_flat.shape}, town_benchmark.csv {town_kpis.shape}, care_type_benchmark.csv {care_type_town.shape})")
 
 
 def analyse():
@@ -438,7 +438,7 @@ def analyse():
     save_priority_list(priority_list)
     
     # Tables for charts.py
-    save_tables(rates_flat, big_towns, care_type_town)
+    save_tables(rates_flat, town_kpis, care_type_town)
 
 
 if __name__ == "__main__":
