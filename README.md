@@ -66,10 +66,16 @@ per person. If it actually costs €3,600 per person, the cost index is
 **Self-rated health** (% of adults who rate their health as good or very good; higher = healthier). I chose it because it covers all kinds of health, so it matches total cost, the headline KPI. 
 Anxiety or depression was set aside: it explains only the mental health slice, and specialist mental health costs are only about 90% complete in the Vektis data.
 
-## Method (provisional)
+## Method
+1. **Acquire.** The Vektis file is downloaded by hand (Vektis blocks scripts); the CBS health table comes from the CBS open data API, with pagination. `pipeline.py` rebuilds both from nothing.
+2. **Clean.** Nine documented decisions (see Cleaning decisions), each checked with asserts, give one clean row per municipality, sex and age band, with a CBS code on every row.
+3. **Benchmark, by indirect standardisation.** National cost per insured-year for 38 sex and age groups; each town's expected cost = its insured-years in each group x those national rates. Cost index = actual / expected x 100; excess = actual - expected. Checksums: the country comes out at exactly 100 and €0.
+4. **Drivers.** The same calculation for each of 10 care-type groups. Drivers are ranked by excess euros, with the index and the spread across towns (IQR) as context.
+5. **Health.** Towns under 10,000 insured-years are left out of rankings (329 remain). Spearman correlation between self-rated health and cost index, then four segments by health (above or below the national 74.1%) and cost (above or below 100).
+6. **Priority list.** The "unexplained high cost" towns ranked by excess euros, top 15 kept, each with a confidence label from the 95% survey range, its two largest drivers and a hand-written suggested focus.
 
 ## Cleaning decisions
-Every decision is written out in full (found, did, why, rejected) in `notebooks/02_clean.ipynb`. `pipeline.py` runs the decided steps; one command, `python pipeline.py`, Every decision is written out in full (found, did, why, rejected) in `notebooks/02_clean.ipynb`. `pipeline.py` runs the decided steps; one command, `python pipeline.py`, rebuilds the clean tables, the analysis and the priority list from the raw data.
+Every decision is written out in full (found, did, why, rejected) in `notebooks/02_clean.ipynb`. `pipeline.py` runs the decided steps; one command, `python pipeline.py`, rebuilds the clean tables, the analysis and the priority list from the raw data.
 
 
 - **Privacy bucket removed.** One unlabelled row holds groups under 10 people and people with unknown sex, age or municipality: 2.2% of people but 0.3% of cost. It cannot be placed in any municipality.
@@ -145,6 +151,23 @@ The shortlist starts from the 29 unexplained towns, ranked by excess euros. The 
 - **Not on the list, on purpose:** the 8 towns from Finding 3. Their high cost is explained by poorer health, so they need prevention, not contract review.
 
 ![Care-type drivers in the top 5 priority towns](figures/04_drivers_top5.png)
+
+## Priority list
+
+The top 10 of the 15 priority towns. Full list with the second driver and a suggested focus per town: [`outputs/priority_list.csv`](outputs/priority_list.csv).
+
+| # | Municipality | Cost index | Excess | Confidence | Top driver |
+|---|---|---|---|---|---|
+| 1 | Groningen | 105.0 | +€34.9M | clear | Mental health |
+| 2 | Utrecht | 102.3 | +€24.0M | clear | Mental health |
+| 3 | Hoogeveen | 111.6 | +€22.4M | borderline | Hospital care |
+| 4 | Leeuwarden | 104.7 | +€19.3M | borderline | Mental health |
+| 5 | Zwolle | 104.0 | +€16.6M | clear | Mental health |
+| 6 | Zutphen | 108.7 | +€15.0M | borderline | Mental health |
+| 7 | Hengelo | 105.1 | +€14.3M | borderline | Hospital care |
+| 8 | Apeldoorn | 102.5 | +€14.1M | borderline | Hospital care |
+| 9 | Albrandswaard | 115.4 | +€13.4M | borderline | Mental health |
+| 10 | Deventer | 103.8 | +€12.9M | borderline | Mental health |
 
 ## Recommendations
 1. **Start a mental health contract and volume review in Groningen, Utrecht and Zwolle.** All three are clearly healthier than national, yet above expected, and mental health is their top driver: Groningen +€39M (index 147), Utrecht +€34M (index 125), Zwolle +€14M (index 134).
