@@ -51,6 +51,8 @@ per person. If it actually costs €3,600 per person, the cost index is
    
    Credit: Bron: GGD'en, RIVM en CBS.
 
+**Why 2024.** It is the most recent year Vektis publishes (checked November 2026; the next file is announced for mid-2027), because claims for a year keep arriving and being settled for months after it ends. The CBS Gezondheidsmonitor covers the same year, so cost and health describe the same period. Which towns cost more than expected changes slowly, so two-year-old data still answers the purchasing question.
+
 ## Health measure
 **Self-rated health** (% of adults who rate their health as good or very good; higher = healthier). I chose it because it covers all kinds of health, so it matches total cost, the headline KPI. 
 Anxiety or depression was set aside: it explains only the mental health slice, and specialist mental health costs are only about 90% complete in the Vektis data.
