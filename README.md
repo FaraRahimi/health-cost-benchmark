@@ -1,9 +1,18 @@
-# Health Cost Benchmark: Dutch municipalities, 2024
+# Health Cost Benchmark: 29 healthier-than-average Dutch towns cost €261M more than expected (2024)
 
 > Fictional stakeholder brief; the data is real and public.
 
 ## Executive summary
-_To be written at the end._
+**What we looked at.** Which of the 342 Dutch municipalities had higher basic-insurance costs per person in 2024 than their age and sex mix predicts, which care types drive the gap, and whether poorer health explains it.
+
+**What we found.** 106 of 329 towns cost more than expected. Most of that extra cost, €1,317M across 77 towns, goes together with poorer health, mainly in South Limburg and the north-east. But 29 towns are healthier than average and still cost €261M more than expected. The 15 largest hold €231M, and mental health is the top driver in 9 of them.
+
+**What we recommend.**
+- Start a mental health contract review in Groningen, Utrecht and Zwolle: clearly healthier than average, together €75M above expected.
+- Before reviewing Albrandswaard, Renkum and Zutphen, check whether a psychiatric institution in the town explains their extreme mental health costs.
+- Treat the towns where poorer health explains the cost, such as Heerlen, as a prevention question, not a contract question.
+
+Above expected is a reason to look, not proof of waste.
 
 ## The brief
 - **Stakeholder:** Regional Healthcare Strategy Manager at a Dutch health insurer (fictional), responsible for care purchasing and planning.
