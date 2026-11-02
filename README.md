@@ -138,7 +138,13 @@ The shortlist starts from the 29 unexplained towns, ranked by excess euros. The 
 ![Care-type drivers in the top 5 priority towns](figures/04_drivers_top5.png)
 
 ## Recommendations
-_To be filled in after analysis._
+1. **Start a mental health contract and volume review in Groningen, Utrecht and Zwolle.** All three are clearly healthier than national, yet above expected, and mental health is their top driver: Groningen +€39M (index 147), Utrecht +€34M (index 125), Zwolle +€14M (index 134).
+2. **Before reviewing Albrandswaard, Renkum and Zutphen, check where their mental health patients are treated.** Their mental health indexes (290, 251, 184) are extreme. Costs count where patients live, so a large psychiatric institution in the town could explain the excess without any overuse.
+3. **Review hospital care use and referral patterns in Hoogeveen and Apeldoorn**, as a second wave. Hospital care is their top driver (Hoogeveen index 113, +€14M; Apeldoorn +€11M), but their health is borderline, so part of the gap may still be explained by health.
+4. **Review nursing and rehabilitation contracts in Hardenberg and Twenterand.** It is the top driver in both (Hardenberg index 143, +€7M; Twenterand index 161, +€5M), and it is one of the care types where towns differ most.
+5. **Do not run a contract review in the 77 towns where poorer health explains the high cost** (+€1,317M, including Heerlen and the rest of South Limburg). Route them to prevention and health programmes instead.
+
+Above expected is a reason to look, not proof of waste.
 
 ## How to reproduce
 
