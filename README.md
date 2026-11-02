@@ -108,7 +108,7 @@ The shortlist starts from the 29 unexplained towns, ranked by excess euros. The 
 
 - **Confidence:** 5 towns are *clear* (Groningen, Utrecht, Zwolle, Renkum, Hardenberg; about €89M): even the bottom of their health survey range is above national. They are the strongest review targets, because we can be sure health does not explain their cost. The other 10 are *borderline*: their survey range includes the national figure, so part of their excess may still be explained by health.
 - **Drivers:** Mental health is the top driver in 9 of the 15 towns, Hospital care in 4, Nursing and rehabilitation in 2.
-- **Start here:** Groningen (+€34.9M) and Utrecht (+€24.0M). Both are clearly healthier than national, have the largest excess, and are driven by mental health.
+- **Start here:** Groningen (+€34.9M), Utrecht (+€24.0M) and Zwolle (+€16.6M). All three are clearly healthier than national, have the largest excess among the clear towns, and are driven by mental health.
 - **Check first:** Albrandswaard, Renkum and Zutphen have extreme mental health indexes (290, 251, 184). Costs count where patients live, so a large mental health institution in the town could explain this; check that before any contract review.
 - **Not on the list, on purpose:** the 8 towns from Finding 3. Their high cost is explained by poorer health, so they need prevention, not contract review.
 
