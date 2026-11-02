@@ -5,7 +5,7 @@
 ## Executive summary
 **What we looked at.** Which of the 342 Dutch municipalities had higher basic-insurance costs per person in 2024 than their age and sex mix predicts, which care types drive the gap, and whether poorer health explains it.
 
-**What we found.** 106 of 329 towns cost more than expected. Most of that extra cost, €1,317M across 77 towns, goes together with poorer health, mainly in South Limburg and the north-east. But 29 towns are healthier than average and still cost €261M more than expected. The 15 largest hold €231M, and mental health is the top driver in 9 of them.
+**What we found.** 106 of 329 towns cost more than expected. Most of that extra cost, €1,317M across 77 towns (from Rotterdam and The Hague to most of South Limburg), goes together with poorer health. But 29 towns are healthier than average and still cost €261M more than expected. The 15 largest hold €231M, and mental health is the top driver in 9 of them.
 
 **What we recommend.**
 - Start a mental health contract review in Groningen, Utrecht and Zwolle: clearly healthier than average, together €75M above expected.
@@ -29,7 +29,7 @@ All costs are basic-insurance (Zvw) claims paid for 2024, per **insured-year**
 |---|---|---|
 | **Actual cost per person** | town's total cost / town's insured-years | Real paid bills, in € |
 | **Expected cost per person** | national cost per insured-year for each age-sex group, applied to the town's own age-sex mix | What the town would cost if it were "average" for its population |
-| **Cost gap (€)** | (actual - expected) per person x town's insured-years | Total extra euros; 0 = as expected |
+| **Excess (€)** | (actual - expected) per person x town's insured-years | Total extra euros; 0 = as expected |
 | **Cost index** (headline) | actual / expected x 100 | 100 = as expected; 120 = 20% more than expected |
 | **Care-type cost index** | care type's actual / expected x 100, per town | Which care types are far above expected; same scale as the cost index |
 | **Care-type excess (€)** | care type's actual - expected, per town | Where the extra euros sit; the top 2 per town are the "drivers" in the priority list |
@@ -56,7 +56,7 @@ per person. If it actually costs €3,600 per person, the cost index is
    
    Used: self-rated health (% good or very good).
    
-   Link: [CBS StatLine 86137NED](https://opendata.cbs.nl/#/CBS/nl/dataset/86137NED/table), accessed through the CBS open data API.
+   Link: [CBS StatLine 86137NED](https://opendata.cbs.nl/statline/#/CBS/nl/dataset/86137NED/table), accessed through the CBS open data API.
    
    Credit: Bron: GGD'en, RIVM en CBS.
 
@@ -174,7 +174,7 @@ The top 10 of the 15 priority towns. Full list with the second driver and a sugg
 2. **Before reviewing Albrandswaard, Renkum and Zutphen, check where their mental health patients are treated.** Their mental health indexes (290, 251, 184) are extreme. Costs count where patients live, so a large psychiatric institution in the town could explain the excess without any overuse.
 3. **Review hospital care use and referral patterns in Hoogeveen and Apeldoorn**, as a second wave. Hospital care is their top driver (Hoogeveen index 113, +€14M; Apeldoorn +€11M), but their health is borderline, so part of the gap may still be explained by health.
 4. **Review nursing and rehabilitation contracts in Hardenberg and Twenterand.** It is the top driver in both (Hardenberg index 143, +€7M; Twenterand index 161, +€5M), and it is one of the care types where towns differ most.
-5. **Do not run a contract review in the 77 towns where poorer health explains the high cost** (+€1,317M, including Heerlen and the rest of South Limburg). Route them to prevention and health programmes instead.
+5. **Do not run a contract review in the 77 towns where poorer health explains the high cost** (+€1,317M, including Heerlen and most of South Limburg). Route them to prevention and health programmes instead.
 
 Above expected is a reason to look, not proof of waste.
 
