@@ -89,10 +89,24 @@ Every decision is written out in full (found, did, why, rejected) in `notebooks/
 - **Missing health values kept empty.** Schiermonnikoog and Vlieland have no health figure. They stay in the cost benchmark and are left out only of the cost-versus-health comparison.
 
 ## Limitations
-- CBS health figures cover adults (18+) only, while Vektis cost covers all ages.
-- Care abroad is incomplete in the Vektis data (foreign bills arrive late), so border towns' true cost is probably higher than shown.
-- Health figures are survey estimates. Small municipalities have wide 95% intervals, so an extreme value there may be noise.
+**What the data covers**
+- Vektis covers basic insurance (Zvw) only: no long-term care (Wlz), no supplementary insurance, no out-of-pocket care. It is all insurers combined, not one insurer's own book.
+- CBS health covers adults (18+) in private households only, so children and nursing-home residents are missing from the health measure, while Vektis cost covers everyone.
+- Specialist mental health costs are only about 90% complete in the Vektis data. Mental health is the main driver on the priority list, so its excess may be somewhat understated.
+- Care abroad is incomplete (foreign bills arrive late), so border towns' true cost is probably higher than shown.
+- One year only (2024): a one-year spike cannot be told apart from a lasting pattern.
 
+**What the method can and cannot say**
+- Age and sex are not the only reasons people need care. The insurers' official risk-equalisation model (*risicoverevening*) also adjusts for diagnoses, income and more, so some "unexplained" gaps would shrink under that model.
+- Above expected is not the same as overspending: it can reflect a nearby academic hospital, better access, or sicker residents in ways a survey misses. Costs also count where patients live, so a large institution in a town raises that town's figures.
+- Area-level patterns say nothing about individuals (the [ecological fallacy](https://en.wikipedia.org/wiki/Ecological_fallacy)). Correlation shows that health and cost move together, not that one causes the other.
+- Health figures are survey estimates with a 95% range. Small municipalities have wide ranges, so an extreme value there may be noise; this is why 10 of the 15 priority towns are labelled borderline.
+- Small municipalities are volatile, so the 13 towns under 10,000 insured-years are left out of rankings and segments.
+
+**My own choices**
+- Negative cells and care abroad are kept, and the 26 cost columns are grouped into 10 care types by judgment (see Cleaning decisions).
+- Schiermonnikoog and Vlieland have no health figure, so they are not in the cost-versus-health comparison.
+- The suggested focus per town is a judgment call, not a result from the data; a domain expert at the insurer should review it.
 
 ## Findings
 ### 1. Baseline: what does care cost per person?
